@@ -13,7 +13,7 @@ namespace CinemaApp
     public partial class Seats : Form
     {
         public int RowCount = 5;
-        public int ColumnCount = 7;
+        public int ColumnCount = 5;
         public int LeftPos = 0;
         public int TopPos = 0;
         public int SeatNumber = 1;
@@ -29,23 +29,72 @@ namespace CinemaApp
 
             for (int row = 0; row < RowCount; row++)
             {
-                for (int column = 0; column < ColumnCount; column++)
+                if (row == 0)
                 {
-                    var seat = new Button();
-                    seat.BackgroundImage = global::CinemaApp.Properties.Resources.seat;
-                    seat.BackgroundImageLayout = ImageLayout.Stretch;
-                    seat.FlatStyle = FlatStyle.Flat;
-                    seat.FlatAppearance.BorderSize = 0;
-                    seat.Width = 50;
-                    seat.Height = 50;
-                    seat.Left = LeftPos;
-                    seat.Top = TopPos;
-                    seat.Text = SeatNumber.ToString();
-                    SeatNumber++;
-                    Controls.Add(seat);
-                    seat.Click += new EventHandler(SelectSeats);
                     LeftPos += 50;
+                    for (int column = 0; column < ColumnCount; column++)
+                    {
+                        var seat = new Button();
+                        seat.BackgroundImage = global::CinemaApp.Properties.Resources.seat;
+                        seat.BackgroundImageLayout = ImageLayout.Stretch;
+                        seat.FlatStyle = FlatStyle.Flat;
+                        seat.FlatAppearance.BorderSize = 0;
+                        seat.Width = 50;
+                        seat.Height = 50;
+                        seat.Left = LeftPos;
+                        seat.Top = TopPos;
+                        seat.Text = SeatNumber.ToString();
+                        SeatNumber++;
+                        Controls.Add(seat);
+                        seat.Click += new EventHandler(SelectSeats);
+                        LeftPos += 50;
+                    }
                 }
+                
+                else if (row == 2)
+                {
+                    LeftPos += 100;
+                    for (int column = 0; column < 3; column++)
+                    {
+                        var seat = new Button();
+                        seat.BackgroundImage = global::CinemaApp.Properties.Resources.seat;
+                        seat.BackgroundImageLayout = ImageLayout.Stretch;
+                        seat.FlatStyle = FlatStyle.Flat;
+                        seat.FlatAppearance.BorderSize = 0;
+                        seat.Width = 50;
+                        seat.Height = 50;
+                        seat.Left = LeftPos;
+                        seat.Top = TopPos;
+                        seat.Text = SeatNumber.ToString();
+                        SeatNumber++;
+                        Controls.Add(seat);
+                        seat.Click += new EventHandler(SelectSeats);
+                        LeftPos += 50;
+                    }
+                }
+               
+                else if (row == 4)
+                {
+                    LeftPos += 150;
+                    for (int column = 0; column < 1; column++)
+                    {
+                        var seat = new Button();
+                        seat.BackgroundImage = global::CinemaApp.Properties.Resources.seat;
+                        seat.BackgroundImageLayout = ImageLayout.Stretch;
+                        seat.FlatStyle = FlatStyle.Flat;
+                        seat.FlatAppearance.BorderSize = 0;
+                        seat.Width = 50;
+                        seat.Height = 50;
+                        seat.Left = LeftPos;
+                        seat.Top = TopPos;
+                        seat.Text = SeatNumber.ToString();
+                        SeatNumber++;
+                        Controls.Add(seat);
+                        seat.Click += new EventHandler(SelectSeats);
+                        LeftPos += 50;
+                    }
+                }
+
                 LeftPos = 0;
                 TopPos += 50;
 
