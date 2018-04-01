@@ -13,6 +13,7 @@ namespace FormCRUD
     public partial class WelcomeScreen : Form
     {
         public int Count = 1;
+        public static int SelectedItem;
         public WelcomeScreen()
         {
             InitializeComponent();
@@ -71,6 +72,7 @@ namespace FormCRUD
 
         public void UpdateData(object obj, EventArgs e)
         {
+            SelectedItem=Convert.ToInt32(SelectForUpdate.SelectedItem);
             var updateForm = new UpdateForm();
             updateForm.Show();
         }
